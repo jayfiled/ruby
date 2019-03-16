@@ -107,3 +107,37 @@ Proof:
     [1, 2, 3].respond_to?(:push) # True
 
     [1, 2, 3].respond_to?(:to_sym) # False
+
+or
+
+    age = 26
+
+    age.respond_to?(:next)
+
+method.push can be substituted with << (the concatenation operator)
+
+    [1, 2, 3] << 4
+    # ==> [1, 2, 3, 4]
+
+> Same with strings
+
+    alphabet = ["a", "b", "c"]
+    alphabet << "d"
+
+    caption = "A giraffe surrounded by "
+    caption << "weezards!"
+
+But to avoid converting your numbers to strings to be used in a string, you can use string interpolation instead:
+
+> Old way
+
+    age = 26
+    "I am " + age.to_s + " years old."
+
+    "I am " << age.to_s << " years old."
+
+> String interpolation
+
+    "I love #{drink}."
+    
+    "I am #{age} years old."
