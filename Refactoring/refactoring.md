@@ -26,6 +26,8 @@ Ruby does ternary expressions as well
 
     puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4."
 
+> Note: the puts expression is first, not prefixed on the strings you want to 'puts' to the console.
+
 Case Statements can be simplified:
 
     case language
@@ -139,5 +141,5 @@ But to avoid converting your numbers to strings to be used in a string, you can 
 > String interpolation
 
     "I love #{drink}."
-    
+
     "I am #{age} years old."
