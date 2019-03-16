@@ -7,16 +7,17 @@
 
  
 ## Adding the ! Edits the variable in place.
+## Which will return a string in lower case, but not edit the original variable 
+
   Input = "This is a string" 
 
   Input.downcase! 
 
-## Which will return a string in lower case, but not edit the original variable 
 
   Input.downcase 
 
 
- 
+
 
   Gets.chomp 
 
@@ -28,7 +29,7 @@
 ## Loops
 
 
-- use end 
+### use end 
 
 
   For 1 in 1...10 
