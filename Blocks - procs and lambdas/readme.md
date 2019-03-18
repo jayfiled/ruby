@@ -33,6 +33,35 @@ yield takes parameters
 
     yield_name("Eric") { |n| puts "My name is #{n}." }
 
-    # Now call the method with your name!
-
     yield_name("Joel") { |n| puts "My name is #{n}"}
+
+Don't forget the parameter on the yeild keyword within the method
+
+    def double(num) 
+    yield(num)
+    end
+    
+    double(3) { |num| 2 * num }
+
+## Procs
+
+> You can't save a block as a variable, but you can use 'procs' for that.
+
+Like names to code == method
+
+Names to blocks == procs
+
+~ Great for DRY principles ~
+
+> Kind of like arrow functions being used as a callback to a function in JS
+
+Use $ as a prefix when calling it as an argument to convert it into a block
+
+    floats = [1.2, 3.45, 0.91, 7.727, 11.42, 482.911]
+
+    round_down = Proc.new { |i| i.floor }
+
+    ints = floats.collect(&round_down)
+    print ints
+
+
