@@ -64,4 +64,15 @@ Use $ as a prefix when calling it as an argument to convert it into a block
     ints = floats.collect(&round_down)
     print ints
 
+You can yield to a proc (because it gets converted to a block) also:
+
+    def greet
+        yield
+    end
+
+    greeting = Proc.new {puts "Hello!"}
+
+    greet(&greeting)
+    # "Hello!"
+
 
