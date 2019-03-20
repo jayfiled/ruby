@@ -140,9 +140,52 @@ In the case of a <b>proc</b>, it will ignore the parameters, if there are not en
 another example:
 
     my_array = ["raindrops", :kettles, "whiskers", :mittens, :packages]
-    
+
     symbol_filter = lambda { |el| el.is_a? Symbol }
 
     symbols = my_array.select(&symbol_filter)
 
     puts symbols
+
+## Review:
+
+### Blocks
+
+    odds_n_ends = [:weezard, 42, "Trady Blix", 3, true, 19, 12.345]
+
+    ints = odds_n_ends.select { |d_type|
+        d_type.is_a? Integer
+    }
+
+    puts ints
+
+### Procs
+
+ages = [23, 101, 7, 104, 11, 94, 100, 121, 101, 70, 44]
+
+
+    under_100 = Proc.new { |num| num < 100 }
+
+    youngsters = ages.select(&under_100)
+
+    puts youngsters
+
+### Lambdas
+
+    crew = {
+    captain: "Picard",
+    first_officer: "Riker",
+    lt_cdr: "Data",
+    lt: "Worf",
+    ensign: "Ro",
+    counselor: "Troi",
+    chief_engineer: "LaForge",
+    doctor: "Crusher"
+    }
+
+    first_half = lambda { |key, value| value < "M"}
+
+    a_to_m = crew.select(&first_half)
+
+    puts a_to_m
+
