@@ -75,4 +75,74 @@ You can yield to a proc (because it gets converted to a block) also:
     greet(&greeting)
     # "Hello!"
 
+# I've missed some learning about passing Ruby methods around with a symbol
 
+- [] - [13 ways of looking at a Ruby Symbol ](http://www.randomhacks.net.s3-website-us-east-1.amazonaws.com/2007/01/20/13-ways-of-looking-at-a-ruby-symbol/)
+- [] - [Official Docs](https://ruby-doc.org/core-2.5.0/Symbol.html)
+- [] - [Nice looking guide](https://www.rubyguides.com/2018/02/ruby-symbols/)
+
+Example: 
+
+    numbers_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    strings_array = numbers_array.collect(&:to_s)
+
+    puts strings_array
+
+    # ==> ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+
+## Lambdas
+Syntax the same as a proc
+
+    lambda { |param| block }
+
+i.e.
+
+call using the & sign as the prefix
+
+    strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
+
+    symbolize = lambda { |string| string.to_sym }
+
+    symbols = strings.collect(&symbolize)
+    print symbols
+
+- Very much the same as procs, but with two main differences.
+1. A <b>lambda</b> will check the amount of arguments sent to it, so if the arguments don't match  the parameters, it will throw an error.
+In the case of a <b>proc</b>, it will ignore the parameters, if there are not enough arguments, or automatically assign NIL to them if there are too many.
+
+2. <b>Lambda's</b> return, then go back to the method, whereas <b>procs</b> return immediately and ignore everything else in the method.
+
+
+
+        def batman_ironman_proc
+        victor = Proc.new { return "Batman will win!" }
+        victor.call
+        "Iron Man will win!"
+        end
+
+        puts batman_ironman_proc
+
+        def batman_ironman_lambda
+        victor = lambda { return "Batman will win!" }
+        victor.call
+        "Iron Man will win!"
+        end
+
+        puts batman_ironman_lambda
+
+        #prints: 
+        Batman will win! <-- from proc
+        Iron Man will win! <--- from lambda
+
+? It's not clear if the lambda is called.  If it is, why wasn't 'Batman will win!' printed first??  If not, then whats the point?
+
+another example:
+
+    my_array = ["raindrops", :kettles, "whiskers", :mittens, :packages]
+    
+    symbol_filter = lambda { |el| el.is_a? Symbol }
+
+    symbols = my_array.select(&symbol_filter)
+
+    puts symbols
