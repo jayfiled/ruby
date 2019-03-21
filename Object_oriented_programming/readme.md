@@ -44,11 +44,30 @@ Variables prefixed with $ @ or @@ are variables that are scoped to:
     hal = Computer.new("Dave", 12345)
 
     puts "Current user: #{hal.current_user}"
-    # @username belongs to the hal instance.
+    ### @username belongs to the hal instance.
 
     puts "Manufacturer: #{$manufacturer}"
-    # $manufacturer is global! We can get it directly.
+    ### $manufacturer is global! We can get it directly.
 
     puts "Files: #{Computer.display_files}"
-    # @@files belongs to the Computer class.
+    ### @@files belongs to the Computer class.
 
+You can use class variables to keep track of how many instances of the object has been created. Like so:
+
+    class Person
+    @@people_count = 0
+    
+    def initialize(name)
+        @name = name
+        @@people_count += 1
+    end
+    
+    def self.number_of_instances
+        return @@people_count
+    end
+    end
+
+    matz = Person.new("Yukihiro")
+    dhh = Person.new("David")
+
+    puts "Number of Person instances: #{Person.number_of_instances}"
