@@ -71,3 +71,26 @@ You can use class variables to keep track of how many instances of the object ha
     dhh = Person.new("David")
 
     puts "Number of Person instances: #{Person.number_of_instances}"
+
+
+# Inheritance
+
+An example of using inheritance with classes
+
+    class ApplicationError
+    def display_error
+        puts "Error! Error!"
+    end
+    end
+
+    class SuperBadError < ApplicationError
+    end
+
+    err = SuperBadError.new
+    err.display_error
+
+Syntax to inherit from a class:
+
+    class DerivedClass < BaseClass
+        #some stuff
+    end
