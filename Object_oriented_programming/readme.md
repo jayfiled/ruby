@@ -94,3 +94,24 @@ Syntax to inherit from a class:
     class DerivedClass < BaseClass
         #some stuff
     end
+
+## Overrides
+
+If you are inheriting a class and you want to override a function, you can define the same 
+fuction and it will be overridden.
+
+    class Creature
+    def initialize(name)
+        @name = name
+    end
+    
+    def fight
+        return "Punch to the chops!"
+    end
+    end
+
+    class Dragon < Creature
+    def fight
+        return "Breathes fire!"
+    end
+    end
