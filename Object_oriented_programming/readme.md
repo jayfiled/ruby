@@ -115,3 +115,16 @@ fuction and it will be overridden.
         return "Breathes fire!"
     end
     end
+
+## Super
+
+When you realise you've overwritten a method of the superclass in your derived class, you can still access the
+original method of the superclass, by using the <i>super</i> keyword
+
+    class DerivedClass < Base
+    def some_method
+        super(optional args)
+        # Some stuff
+        end
+    end
+    end
