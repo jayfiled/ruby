@@ -128,3 +128,56 @@ original method of the superclass, by using the <i>super</i> keyword
         end
     end
     end
+
+or like this:
+
+    class Creature
+    def initialize(name)
+        @name = name
+    end
+    
+    def fight
+        return "Punch to the chops!"
+    end
+    end
+
+    # Add your code below!
+
+    class Dragon < Creature
+    def fight
+        puts "Instead of breathing fire. . . "
+        super
+    end
+    end
+
+?? I'm not sure why there isn't three ends on the above...
+> It could be that calling super without any arguments, or any code we don't need to write an express <i>end</i> keyword
+
+You can shorten an expression to one line by using a semicolon, i.e.
+
+    def method; end
+
+Review:
+
+Create a message class, then an email class that uses the parent class's initialize method;
+
+    class Message
+    
+    @@messages_sent = 0
+
+    def initialize(from, to)
+        @from = from
+    @to = to
+    @@messages_sent += 1
+    end
+
+    end
+
+    my_message = Message.new("Mr. Hitchcock", "Mrs Blanka")
+
+    class Email < Message
+        def initialize(from, to)
+        super
+    end
+    end
+
