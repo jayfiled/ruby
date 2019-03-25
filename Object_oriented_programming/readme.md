@@ -1,4 +1,4 @@
-# New concepts / differences from JavaScript
+# OOP pt I
 
 ## Classes
 
