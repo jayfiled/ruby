@@ -14,5 +14,73 @@ In order to get the info, we need to create public methods that know how to acce
 
 > This separates the <b>private implementation from the public interface</b>
 
+## More refactoring
 
+> attr_reader & attr_writer
 
+replaces methods in classes used for reading or changing variables, i.e:
+
+    class Person 
+
+    initialize(user, job)
+    #code here
+    end
+
+    def username
+    return username
+    end
+
+    def job(newJob)
+    @job = newJob
+    end
+
+    end
+
+Can be changed to:
+
+    class Person 
+
+    initialize(user, job)
+    #code here
+    end
+
+    attr_reader :user
+
+    attr_writer :job
+
+    def job(newJob)
+    @job = newJob
+    end
+
+    end
+
+one more example:
+
+    class Person
+    def initialize(name, job)
+        @name = name
+        @job = job
+    end
+    
+    def name
+        @name
+    end
+    
+    def job=(new_job)
+        @job = new_job
+    end
+    end
+
+turns to:
+
+class Person
+  def initialize(name, job)
+    @name = name
+    @job = job
+  end
+  
+attr_reader :name
+ 
+attr_writer :job
+  
+end
