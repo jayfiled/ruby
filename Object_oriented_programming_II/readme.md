@@ -84,3 +84,30 @@ attr_reader :name
 attr_writer :job
   
 end
+
+> or use <code>attr_accessor</code> to replace a variable that has an <code>attr_reader</code> and <code>attr_writer</code>
+
+class Person
+  attr_reader :name
+  attr_reader :job
+  attr_writer :job
+  
+  def initialize(name, job)
+    @name = name
+    @job = job
+  end
+end
+
+changes to
+
+class Person
+
+    attr_reader :name
+    attr_accessor :job
+
+    def initialize(name, job)
+        @name = name
+        @job = job
+    end
+end
+
