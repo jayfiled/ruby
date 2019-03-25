@@ -18,3 +18,5 @@ class Computer
   end
     
   end
+  
+  my_computer = Computer.new("Jayfiled", "122245J")
