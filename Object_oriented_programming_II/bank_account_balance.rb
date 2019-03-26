@@ -29,3 +29,15 @@ class Account
     end
     
   end
+    
+  checking_account = Account.new("Jayfiled", 500_450)
+
+=begin
+
+
+  - Include a deposit method that lets users add money to their accounts
+  - Include error checking that prevents users from overdrawing their accounts
+  - Create CheckingAccounts or SavingsAccounts that inherit from Account
+
+
+=end
