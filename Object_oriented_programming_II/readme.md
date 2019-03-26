@@ -215,5 +215,24 @@ Another example:
     Samurai.swordsman
     #Returns the swordsman method from the MartialArts method.
 
+include vs extend
+
+> Use extend when you want to mixin the functionality of a module to a class.  So you can call the module's methods by calling the class first, i.e:
+
+    module ThePresent
+    
+    def now
+        puts "It's #{Time.new.hour > 12 ? Time.new.hour - 12: Time.new.hour}:#{Time.new.min}#{Time.new.hour > 12 ? "PM" : "AM"}(GMT)."
+    end
+    
+    end
+
+    class TheHereAnd
+        extend ThePresent
+    end
+
+    TheHereAnd.now
+        #It's 10:36 AM (GMT)
+
 
 
