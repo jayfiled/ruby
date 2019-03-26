@@ -189,8 +189,31 @@ to be able to reference the constants and methods that are in the Math module <i
 
 See how above we can referece the jump method in the rabbit class because we included the Action module in it?
 
+Another example:
 
+    module MartialArts
+        def swordsman
+        puts "I'm a swordsman."
+    end
+    end
 
+    class Ninja
+    include MartialArts
+
+    def initialize(clan)
+        @clan = clan
+    end
+    end
+
+    class Samurai
+    include MartialArts
+    def initialize(shogun)
+        @shogun = shogun
+    end
+    end
+
+    Samurai.swordsman
+    #Returns the swordsman method from the MartialArts method.
 
 
 
