@@ -111,3 +111,86 @@ class Person
     end
 end
 
+## Modules
+
+CapitalizedCamelCase, or, Pascal notation
+
+Best Practice to use constants instead of variables. Constant declaration syntax: ALL_CAPS_SEPARATED_BY_UNDERSCORES
+
+> One purpose of modules is to separate methods and constants into named spaces, hence the term; <b>namespacing</b>
+
+So if you have a constant named PI in the Math module, and you've built your own module Circle.PI, you reference them like so:
+
+    Math::PI
+    Circle::PI
+
+using the <b>scope resolution operator</b> to avoid confusing Ruby.
+
+Use require to import a module.
+- Module name in lowercase and in single quotation marks:
+
+    require 'date'
+
+    puts date.today
+
+Similar to javascript destructuring, you can use:
+
+    includes Math
+
+to be able to reference the constants and methods that are in the Math module <i>without</i> having to type <code>Math::</code> or <code>Math.</code> first
+
+    class Angle
+    include Math
+    
+    attr_accessor :radians
+    
+    def initialize(radians)
+        @radians = radians
+    end
+    
+    def cosine
+        cos(@radians)
+    end
+    end
+
+    acute = Angle.new(1)
+    acute.cosine
+
+> the fact that we included a module into a class allows us to to customize a class without rewriting it - called a <b>mixin</b>
+
+    module Action
+    def jump
+        @distance = rand(4) + 2
+        puts "I jumped forward #{@distance} feet!"
+    end
+    end
+
+    class Rabbit
+    include Action
+    attr_reader :name
+    def initialize(name)
+        @name = name
+    end
+    end
+
+    class Cricket
+    include Action
+    attr_reader :name
+    def initialize(name)
+        @name = name
+    end
+    end
+
+    peter = Rabbit.new("Peter")
+    jiminy = Cricket.new("Jiminy")
+
+    peter.jump
+    jiminy.jump
+
+See how above we can referece the jump method in the rabbit class because we included the Action module in it?
+
+
+
+
+
+
