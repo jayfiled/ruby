@@ -128,7 +128,31 @@ User and/pr apassword:
     # If you setup MySQL or Postgres with a username/password, modify the
     # config/database.yml file to contain the username/password that you specified
 
-    # Create the database
+I needed to update gems and update my gemfile.lock by running this before I could create the database:
+
+    #update Rubygems
+
+        gem update --system
+
+    #update bundler
+
+        gem install bundler
+
+    #update Gemfile.lock in your project
+
+        bundler update --bundler
+
+
+## Create the database
+
+Need  to amend the database.yml file in config to specify a username or else you get the error:
+
+> FATAL:  role "jayfiled" does not exist
+
+continue from here: https://stackoverflow.com/questions/8639424/role-does-not-exist-and-unable-to-create-database-when-using-postgresql
+
+
+
     rake db:create
 
     rails server
