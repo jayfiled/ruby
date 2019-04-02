@@ -28,15 +28,16 @@
         <section class="patties">
             <label for="amount">How many patties would you like?</label>
             <input type="number" name="amount" id="amount" step="1">
-
-        <section class="cooked">
-            <label for="doneness">How do you want your patty cooked</label>
-            <br>
-            <span>Rare</span>
-            <input type="range" name="doneness" id="doneness" min="0" max="5" step="0.5">
-          
-                    
-            <span>Well-Done</span>
+            
+            <section class="cooked">
+                <label for="doneness">How do you want your patty cooked</label>
+                <br>
+                <span>Rare</span>
+                <input type="range" name="doneness" id="doneness" min="0" max="5" step="0.5">
+                
+                
+                <span>Well-Done</span>
+            </section>
             <hr>
         
             <section class="toppings">
@@ -69,11 +70,24 @@
                     <option value="sesame">Sesame</option>
                     <option value="potato">Potato</option>
                     <option value="jalapenoes">Jalapenoes</option>
-                </select>
+                </select>  
+            </section>
+            <hr>
+
+            <section class="sauce-selection">
+              <label for="sauce">What type of sauce would you like?</label>
+              <input list="sauces" id="sauce" name="sauce">
+              
+              <datalist id="sauces">
+                  <option value="ketchup"></option>
+                  <option value="mayo"></option>
+                  <option value="bbq"></option>
+
+              </datalist>
                         
               
             </section>
-        </section>
+
       </form>
       
       
