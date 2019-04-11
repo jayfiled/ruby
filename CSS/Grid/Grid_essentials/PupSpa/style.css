@@ -5,14 +5,17 @@ body {
   }
   
   .grid {
-  
+      display: grid;
+    grid-template: 5% 30% 10% 30% 20% 5% / repeat(6, 1fr);
+    grid-column-gap: 20px;
   }
   
   header {
     background-color: #ffffff;
     color: #dc6363;
     padding-top: 10px;
-  
+      grid-column-start: 1;
+    grid-column-end: 7;
   }
   
   .banner {
@@ -23,7 +26,8 @@ body {
     font-weight: 300;
     letter-spacing: 3.7px;
     color: #ffffff;
-  
+      grid-column-start: 1;
+    grid-column-end: 7;	
   }
   
   img {
@@ -33,7 +37,8 @@ body {
   .about {
     background-color: #f0f0f0;
     padding-bottom: 20px;
-  
+      grid-column-start: 1;
+    grid-column-end: 7;
   }
   
   .text {
@@ -63,15 +68,15 @@ body {
   }
   
   .address {
-  
+      grid-column: span 2;
   }
   
   .hours {
-  
+      grid-column: 3 / 5;
   }
   
   .call-us {
-  
+      grid-column: 5 / 7;
   }
   
   .marker {
@@ -102,10 +107,11 @@ body {
   }
   
   .one {
-  
+      grid-column: 1 / span 3;
   }
   
   .two {
+      grid-column: 4 / span 3;
   
   }
   
@@ -123,11 +129,13 @@ body {
   @media(max-width: 600px){
   
     .grid {
-  
+      grid-template-columns: 100%;
+      grid-template-rows: 5% 30% 10% repeat(3, 10%) repeat(2, 10%) 5%;
+      grid-row-gap: 20px;
     }
   
     header {
-  
+      margin-bottom: -20px;
     }
   
     .banner {
@@ -135,6 +143,7 @@ body {
       font-weight: 300;
       line-height: 2.75;
       letter-spacing: 1.9px;
+      margin-bottom: -20px;
   
     }
   
@@ -145,7 +154,7 @@ body {
     }
   
     .about {
-  
+      margin-bottom: -20px;
     }
   
     .text {
@@ -163,15 +172,18 @@ body {
     }
   
     .address {
-  
+      grid-row: 4 / span 1;
+      grid-column: 1 / span 1;
     }
   
     .hours {
-  
+      grid-row: 5 / span 1;
+      grid-column: 1 / span 1;
     }
   
     .call-us {
-  
+      grid-row: 6 / span 1;
+      grid-column: 1 / span 1;
     }
   
     .marker {
@@ -196,15 +208,20 @@ body {
     }
   
     .one {
+      grid-row: 7 / span 1;
+      grid-column: 1 / span 1;
   
     }
   
     .two {
-  
+      grid-row: 8 / span 1;
+      grid-column: 1 / span 1;
     }
   
     footer {
-  
+      grid-column-start: 1;
+    grid-column-end: 7;
+      margin-top: -20px;
     }
   
   }
