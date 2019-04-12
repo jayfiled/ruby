@@ -36,11 +36,14 @@ body {
     color: #ffffff;
     margin: 0;
     align-self: center;
+  	column-gap: 20px;
 }
 
 .container {
-    width: 1000px;
-    
+	width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 20px repeat(5, 100px);
 }
 
 .search-bar {
@@ -81,6 +84,7 @@ input {
 .card-column {
 	background-color: #ffffff;
   min-height: 700px;
+  display: grid;
 }
 
 .card-column h2 {
