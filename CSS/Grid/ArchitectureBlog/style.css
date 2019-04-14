@@ -56,7 +56,7 @@ body {
   /* set 3: pattern play */
   
   .g {
-  
+      grid-area: 11 / 3 / 18 / 13;
   }
   
   .h {
@@ -70,7 +70,7 @@ body {
   /* set 4: healing house */
   
   .j {
-  
+      grid-area: 15 / 1 / 22 / 7;
   }
   
   .k {
@@ -84,7 +84,7 @@ body {
   /* set 5: curved perfection */
   
   .m {
-  
+      grid-area: 21 / 3 / 28 / 13;
   }
   
   .n {
