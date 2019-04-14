@@ -9,26 +9,40 @@ body {
   
   
   .grid {
+      display: grid;
+    width: 900px;
+    height: 3000px;
+    margin: auto;
+    grid-template: repeat(30, 1fr) / repeat(12, 1fr);
+  }
   
+  img {
+    max-width: 100%;
   }
   
   /* set 1: repurposed living */
   .a {
-  
+      grid-area: 1 / 3 / 5 / 13;
   }
   
   .b {
-  
+      grid-area: 2 / 2 / 3 / 4;
   }
   
   .c {
+      grid-area: 4 / 1 / 5 / 4;
+  }
   
+  .e, .f,  .h, .i, .k, .l, .n, .o {
+    display: none;
   }
   
   /* set 2: angles */
-  
+  /* imgs maintain their aspect ratio based on their width, so what ever 
+  you set the column to span, it will maintain the aspect ratio so that the 
+  values you set for the row will be ignored. */
   .d {
-  
+      grid-area: 5 / 1 / 12 / 7;
   }
   
   .e {
